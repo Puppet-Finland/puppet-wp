@@ -60,9 +60,7 @@ class wp::cli (
 		}
 	}
 
-	if ! defined(Package['git']) {
-		package { 'git':
-			ensure => installed,
-		}
-	}
+    if ! defined(Package['git']) {
+        include ::git
+    }
 }
